@@ -1,0 +1,23 @@
+- hosts: ec2
+  become: yes
+  tasks:
+  - name: Install apache 
+    ansible.builtin.dnf:
+      name: httpd
+      state: present
+      update_cache: yes
+
+  - name: Start apache
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: Create users
+    ansible.builtin.user:
+      name: "{{ item }}"
+    loop:
+    - jenny
+    - rose
+    - jisoo
+    - lisa
