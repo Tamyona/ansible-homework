@@ -1,0 +1,6 @@
+[kaizen]
+3.15.34.41
+3.133.139.144
+
+[kaizen:vars]
+ansible_user=ec2-user

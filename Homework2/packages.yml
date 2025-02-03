@@ -1,0 +1,10 @@
+- name: Install packages
+  ansible.builtin.dnf:
+    name: "{{ hello }}"
+    update_cache: yes
+
+- name: Start apache 
+  ansible.builtin.service:
+    name: "{{ world }}"
+    state: "{{ kaizen }}"
+    enabled: yes
